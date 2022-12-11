@@ -25,6 +25,7 @@ public class App {
         Properties myProp = PropertyFileOpen.openPropertyFile();
         Long start = System.currentTimeMillis();
         MongoClient mongoClient = MongoClients.create(myProp.getProperty("URL"));
+
         MongoDatabase database = mongoClient.getDatabase("nosql");
         MongoCollection collectionLots = database.getCollection("store_lots");
         MongoCollection collectionTypes = database.getCollection("types");
